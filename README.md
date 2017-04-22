@@ -1,6 +1,6 @@
 # npmtest-react-native-simple-store
 
-#### basic test coverage for  [react-native-simple-store (v1.1.0)](https://github.com/jasonmerino/react-native-simple-store#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-react-native-simple-store.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-react-native-simple-store) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-react-native-simple-store.svg)](https://travis-ci.org/npmtest/node-npmtest-react-native-simple-store)
+#### basic test coverage for  react-native-simple-store (v1.1.0)  [![npm package](https://img.shields.io/npm/v/npmtest-react-native-simple-store.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-react-native-simple-store) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-react-native-simple-store.svg)](https://travis-ci.org/npmtest/node-npmtest-react-native-simple-store)
 
 #### A minimalistic wrapper around React Native's AsyncStorage.
 
@@ -35,33 +35,16 @@
 ```json
 
 {
-    "author": {
-        "name": "Jason Merino"
-    },
-    "bugs": {
-        "url": "https://github.com/jasonmerino/react-native-simple-store/issues"
-    },
-    "dependencies": {
-        "lodash.merge": "^4.6.0"
-    },
+    "name": "react-native-simple-store",
+    "version": "1.1.0",
     "description": "A minimalistic wrapper around React Native's AsyncStorage.",
-    "devDependencies": {
-        "babel-cli": "^6.7.7",
-        "babel-jest": "^9.0.3",
-        "babel-preset-es2015": "^6.6.0",
-        "babel-preset-stage-0": "^6.5.0",
-        "jest-cli": "^13.2.3",
-        "jsdox": "^0.4.10",
-        "react": "^0.14.7",
-        "react-native": "^0.22.0"
+    "main": "dist/index.js",
+    "scripts": {
+        "dist": "babel src -d dist",
+        "gen-docs": "./node_modules/.bin/jsdox src/index.js --output docs",
+        "preversion": "npm run dist -s ; npm run gen-docs -s",
+        "test": "./node_modules/.bin/jest"
     },
-    "directories": {},
-    "dist": {
-        "shasum": "69e91d6b91d362cd4ea12b0486df3eaf2f628b04",
-        "tarball": "https://registry.npmjs.org/react-native-simple-store/-/react-native-simple-store-1.1.0.tgz"
-    },
-    "gitHead": "2bf2d3797370c2ce92e9958165969d2db9ef4fa5",
-    "homepage": "https://github.com/jasonmerino/react-native-simple-store#readme",
     "jest": {
         "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
         "unmockedModulePathPatterns": [
@@ -72,6 +55,10 @@
         ],
         "collectCoverage": true
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jasonmerino/react-native-simple-store"
+    },
     "keywords": [
         "React Native",
         "iOS",
@@ -80,26 +67,22 @@
         "data store",
         "key value store"
     ],
+    "author": "Jason Merino",
     "license": "MIT",
-    "main": "dist/index.js",
-    "maintainers": [
-        {
-            "name": "jasonmerino"
-        }
-    ],
-    "name": "react-native-simple-store",
-    "optionalDependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jasonmerino/react-native-simple-store.git"
+    "dependencies": {
+        "lodash.merge": "^4.6.0"
     },
-    "scripts": {
-        "dist": "babel src -d dist",
-        "gen-docs": "jsdox src/index.js --output docs",
-        "preversion": "npm run dist -s ; npm run gen-docs -s",
-        "test": "jest"
+    "devDependencies": {
+        "babel-cli": "^6.7.7",
+        "babel-jest": "^9.0.3",
+        "babel-preset-es2015": "^6.6.0",
+        "babel-preset-stage-0": "^6.5.0",
+        "jest-cli": "^13.2.3",
+        "jsdox": "^0.4.10",
+        "react": "^0.14.7",
+        "react-native": "^0.22.0"
     },
-    "version": "1.1.0"
+    "bin": {}
 }
 ```
 
